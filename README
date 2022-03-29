@@ -1,0 +1,6 @@
+With LeOS-AppVault you can set a Pin/Pattern/Fingerprint lock for every app. You can hide contacts, Notes, pictures or videos.
+You should always leave the app with 'back' button.
+Contacts= If you create a contect direct in the app, it's has only limited fields and you can edit them
+Videos= Once in Vault, ever in Vault. No way to delete
+You should lock 'Settings' in the app to prevend uninstalling the app.    
+If you are using ClassyShark, you will find 12 Trackers (most are adds 'tracker'). I haven't removed them all because I have restricted the Internet access. So the trackers can't download any add or upload any collected data. I will work on removing the trackers. Stay tuned
