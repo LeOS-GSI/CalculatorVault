@@ -196,7 +196,7 @@ public class CreateNewContactActivity extends AppCompatActivity implements View.
 
                         saveNewContact();
                     }
-                } else if (msPhoneNumber.length() < 10 && !TextUtils.isEmpty(msPhoneNumber)) {
+                } else if (msPhoneNumber.length() < 20 && !TextUtils.isEmpty(msPhoneNumber)) {
                     androidx.appcompat.app.AlertDialog.Builder alertDialogBuilder = new androidx.appcompat.app.AlertDialog.Builder(this);
                     alertDialogBuilder.setMessage("Mobile Number is not valid.");
                     alertDialogBuilder.setNegativeButton("OK", (dialog, which) -> dialog.dismiss());

@@ -44,9 +44,9 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:paddingRight="7dp"
                 android:paddingLeft="7dp"
                 android:paddingTop="16dp"
+                android:paddingRight="7dp"
                 android:paddingBottom="16dp"
                 android:src="@drawable/ic_recode_delete"
                 android:visibility="visible" />
