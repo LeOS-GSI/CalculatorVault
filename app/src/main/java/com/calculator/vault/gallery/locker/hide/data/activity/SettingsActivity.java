@@ -14,10 +14,6 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        findViewById(R.id.mbroset).setOnClickListener(v -> {
-            startActivity(new Intent(SettingsActivity.this, BrowserSelectionActivity.class));
-        });
-
         findViewById(R.id.m_iv_back).setOnClickListener(v -> {
             finish();
         });
@@ -34,9 +30,7 @@ public class SettingsActivity extends AppCompatActivity {
             startActivity(new Intent(SettingsActivity.this, DecoyPasscodeActivity.class));
         });
 
-        findViewById(R.id.mbarest).setOnClickListener(v -> {
-            startActivity(new Intent(SettingsActivity.this, BackupActivity.class));
-        });
+
 
         findViewById(R.id.mrepass).setOnClickListener(v -> {
             startActivity(new Intent(SettingsActivity.this, HowToRecoverPassActivity.class));

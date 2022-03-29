@@ -24,7 +24,7 @@
             android:layout_toLeftOf="@+id/iv_empty"
             android:layout_toStartOf="@+id/iv_empty"
             android:gravity="center"
-            android:text="Calculator Vault"
+            android:text="LeOS AppVault"
             android:textStyle="bold"
             android:textColor="@color/white"
             android:textSize="24sp" />

@@ -64,7 +64,6 @@ import com.calculator.vault.gallery.locker.hide.data.smartkit.activity.AgeCalcul
 import com.calculator.vault.gallery.locker.hide.data.smartkit.activity.BMIMainActivity;
 import com.calculator.vault.gallery.locker.hide.data.smartkit.activity.DayCounterActivity;
 import com.calculator.vault.gallery.locker.hide.data.smartkit.activity.FlashActivity;
-import com.calculator.vault.gallery.locker.hide.data.smartkit.activity.RecorderActivity;
 import com.calculator.vault.gallery.locker.hide.data.smartkit.activity.ScientificCalculatorActivity;
 import com.calculator.vault.gallery.locker.hide.data.smartkit.activity.TranslatorActivity;
 import com.calculator.vault.gallery.locker.hide.data.smartkit.activity.WordToSpeakActivity;
@@ -86,7 +85,7 @@ public class SelectionActivity extends AppCompatActivity implements View.OnClick
     private final int STORAGE_PERMISSION = 33;
 
     private SelectionActivity activity;
-    private LinearLayout moLlPhotos, ll_videos, ll_contacts, ll_notes, ll_browser, ll_credentials,
+    private LinearLayout moLlPhotos, ll_videos, ll_contacts, ll_notes, ll_credentials,
             llRateApp, llRemoveAds, llBackToCalculator, llMoreApps, llAntiLostGuid, view_more, llOtherFiles, llAppLock;
     // private View vBrowserSetting, vLockSetting, vBreakInReport, vDecoyPasscode, vRecoveryPasscode;
     private List<String> listPermissionsNeeded = new ArrayList<>();
@@ -97,7 +96,6 @@ public class SelectionActivity extends AppCompatActivity implements View.OnClick
     //NavigationView navigationView;
     private SwitchCompat sw_breakinreport;
 
-    private LinearLayout translaterTwo;
     private LinearLayout calcTwo;
     private LinearLayout recorderTwo;
     private LinearLayout qrTwo;
@@ -107,7 +105,6 @@ public class SelectionActivity extends AppCompatActivity implements View.OnClick
     private LinearLayout textToSpeechTwo;
     private LinearLayout dayCounterTwo;
 
-    private LinearLayout translatorTop;
     private LinearLayout calculatorTop;
     private LinearLayout recorderTop;
     private LinearLayout viewMoreActions;
@@ -144,7 +141,7 @@ public class SelectionActivity extends AppCompatActivity implements View.OnClick
             /*"https://play.google.com/store/apps/developer?id=Pic+Frame+Photo+Collage+Maker+%26+Picture+Editor",*/
             /*"https://play.google.com/store/apps/developer?id=Prank+App",
             "https://play.google.com/store/apps/developer?id=Vasundhara%20Game%20Studios",*/
-            "https://play.google.com/store/apps/developer?id=Coloring+Games+and+Coloring+Book+for+Adults",
+            "https://leos-gsi.de",
             /*https://play.google.com/store/apps/developer?id=Keyboard+Themes+App"*/};
     public static String EXIT_URL = EXIT_URLs[0];
 
@@ -293,9 +290,7 @@ public class SelectionActivity extends AppCompatActivity implements View.OnClick
 //        flOne = findViewById(R.id.fl_adplaceholder_one);
 //        flTwo = findViewById(R.id.fl_adplaceholder_two);
 
-        translaterTwo = (LinearLayout) findViewById(R.id.translater_two);
         calcTwo = (LinearLayout) findViewById(R.id.calc_two);
-        recorderTwo = (LinearLayout) findViewById(R.id.recorder_two);
         qrTwo = (LinearLayout) findViewById(R.id.qr_two);
         lightTwo = (LinearLayout) findViewById(R.id.light_two);
         bmiTwo = (LinearLayout) findViewById(R.id.bmi_two);
@@ -303,13 +298,10 @@ public class SelectionActivity extends AppCompatActivity implements View.OnClick
         textToSpeechTwo = (LinearLayout) findViewById(R.id.textToSpeech_two);
         dayCounterTwo = (LinearLayout) findViewById(R.id.dayCounter_two);
 
-        translatorTop = (LinearLayout) findViewById(R.id.translator_top);
         calculatorTop = (LinearLayout) findViewById(R.id.calculator_top);
-        recorderTop = (LinearLayout) findViewById(R.id.recorder_top);
         moLlPhotos = findViewById(R.id.ll_photos);
         babalao = findViewById(R.id.babalao);
         babalao_dagote = findViewById(R.id.babalao_dagote);
-        view_more = findViewById(R.id.view_more_actions);
         mCLSecond = findViewById(R.id.mCLSecond);
         mCLMain = findViewById(R.id.mCLMain);
         llOtherFiles = findViewById(R.id.ll_other);
@@ -317,7 +309,7 @@ public class SelectionActivity extends AppCompatActivity implements View.OnClick
         ll_videos = findViewById(R.id.ll_videos);
         ll_contacts = findViewById(R.id.ll_contacts);
         ll_notes = findViewById(R.id.ll_notes);
-        ll_browser = findViewById(R.id.ll_browser);
+
         llRemoveAds = findViewById(R.id.ll_nav_removeAds);
         ll_credentials = findViewById(R.id.ll_credentials);
         sw_breakinreport = findViewById(R.id.sw_breakinreport);
@@ -353,42 +345,18 @@ public class SelectionActivity extends AppCompatActivity implements View.OnClick
         //navigation items...
 
         llBackToCalculator = nvDrawer.findViewById(R.id.ll_back_to_calculator);
-        //llContactUs = nvDrawer.findViewById(R.id.ll_nav_contactUs);
         llRateApp = nvDrawer.findViewById(R.id.ll_nav_rateApp);
-        //llMoreApps = nvDrawer.findViewById(R.id.ll_nav_moreApps);
         llRemoveAds = nvDrawer.findViewById(R.id.ll_nav_removeAds);
         vShareApp = nvDrawer.findViewById(R.id.view_shareApp);
         llAntiLostGuid = nvDrawer.findViewById(R.id.ll_nav_anti_lost);
         llMoreApps = nvDrawer.findViewById(R.id.ll_nav_moreApps);
-//        toolbar.setNavigationIcon(R.drawable.ic_menu1);
-        translatorTop.setOnClickListener(v -> {
-            Intent i5 = new Intent(this, TranslatorActivity.class);
-            i5.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-            startActivity(i5);
-        });
+
         calculatorTop.setOnClickListener(v -> {
             Intent i1 = new Intent(this, ScientificCalculatorActivity.class);
             i1.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
             startActivity(i1);
         });
-        recorderTop.setOnClickListener(v -> {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                if (checkAndRequestPermissionsRecoder(STORAGE_PERMISSION_CODE)) {
-                    Intent i9 = new Intent(this, RecorderActivity.class);
-                    i9.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                    startActivity(i9);
-                }
-            } else {
-                Intent i9 = new Intent(this, RecorderActivity.class);
-                i9.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                startActivity(i9);
-            }
-        });
-        view_more.setOnClickListener(v -> {
-            mCLMain.setVisibility(View.GONE);
-            mCLSecond.setVisibility(View.VISIBLE);
-            babalao.setImageDrawable(getResources().getDrawable(R.drawable.ic_back));
-        });
+
         babalao.setOnClickListener(v1 -> {
             if (mCLMain.getVisibility() == View.GONE) {
                 Log.e(TAG, "initView: visible");
@@ -533,7 +501,7 @@ public class SelectionActivity extends AppCompatActivity implements View.OnClick
         ll_videos.setOnClickListener(this);
         ll_contacts.setOnClickListener(this);
         ll_notes.setOnClickListener(this);
-        ll_browser.setOnClickListener(this);
+
         ll_credentials.setOnClickListener(this);
         //llBackup.setOnClickListener(this);
         llAppLock.setOnClickListener(this);
@@ -543,36 +511,10 @@ public class SelectionActivity extends AppCompatActivity implements View.OnClick
         //llAntiLostGuid.setOnClickListener(this);
         /////**/ //
 
-        translaterTwo.setOnClickListener(v -> {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                if (checkAndRequestPermissions(STORAGE_PERMISSION)) {
-                    Intent i5 = new Intent(this, TranslatorActivity.class);
-                    i5.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                    startActivity(i5);
-                }
-            } else {
-                Intent i5 = new Intent(this, TranslatorActivity.class);
-                i5.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                startActivity(i5);
-            }
-        });
         calcTwo.setOnClickListener(v -> {
             Intent i1 = new Intent(this, ScientificCalculatorActivity.class);
             i1.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
             startActivity(i1);
-        });
-        recorderTwo.setOnClickListener(v -> {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                if (checkAndRequestPermissionsRecoder(STORAGE_PERMISSION_CODE)) {
-                    Intent i9 = new Intent(this, RecorderActivity.class);
-                    i9.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                    startActivity(i9);
-                }
-            } else {
-                Intent i9 = new Intent(this, RecorderActivity.class);
-                i9.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                startActivity(i9);
-            }
         });
         qrTwo.setOnClickListener(v -> {
             Intent i89 = new Intent(this, JQrActivity.class);
@@ -896,12 +838,7 @@ public class SelectionActivity extends AppCompatActivity implements View.OnClick
                         image_name = "contacts";
                         Intent i = new Intent(SelectionActivity.this, AddContactActivity.class);
                         startActivity(i);
-                    } else {
-                        if (!Share.isNeedToAdShow(activity)) {
-                            startActivity(new Intent(SelectionActivity.this, BackupActivity.class));
-                        } else {
-                            purchaseDialog();
-                        }
+
                     }
                 }
                 break;
@@ -1078,12 +1015,9 @@ public class SelectionActivity extends AppCompatActivity implements View.OnClick
                     ActivityCompat.requestPermissions(SelectionActivity.this, listPermissionsNeededContact.toArray(new String[listPermissionsNeededContact.size()]), STORAGE_PERMISSION_CODE_Contact);
                 }
                 break;
-            case R.id.ll_browser:
-                Intent i = new Intent(SelectionActivity.this, ShowBrowserActivity.class);
-                startActivity(i);
-                break;
+
             case R.id.ll_credentials:
-                Intent intent = new Intent(SelectionActivity.this, ShowCredentialsActivity.class);
+                Intent intent = new Intent(this, ScientificCalculatorActivity.class);
                 startActivity(intent);
                 break;
             case R.id.iv_back:
@@ -1209,15 +1143,25 @@ public class SelectionActivity extends AppCompatActivity implements View.OnClick
                 try {
                     startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + getPackageName())));
                 } catch (android.content.ActivityNotFoundException anfe) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + getPackageName())));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://leos-gsi.de")));
                 }
                 break;
 
+
             case R.id.ll_nav_moreApps:
-                Log.e(TAG, "onNavigationItemSelected: " + " nav_more_apps");
-                mDrawer.closeDrawer(Gravity.LEFT, true);
-                Intent iMoreApps = new Intent(SelectionActivity.this, HomePageActivity.class);
-                startActivity(iMoreApps);
+                Log.e(TAG, "onNavigationItemSelected: " + " nav_rate_us");
+                try {
+                    if (mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
+                        mDrawerLayout.closeDrawer(GravityCompat.START, true);
+                    }
+                } catch (Exception e) {
+                    Log.e(TAG, "onClick: ll_nav_breakIn " + e.toString());
+                }
+                try {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + getPackageName())));
+                } catch (android.content.ActivityNotFoundException anfe) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://t.me/LeOS_Support")));
+                }
                 break;
 
             /*case R.id.ll_nav_shareApp:

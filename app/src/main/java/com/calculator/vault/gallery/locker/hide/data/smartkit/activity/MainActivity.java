@@ -546,14 +546,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Log.e("onProductPurchased", "Purchased");
         SharedPrefs.savePref(this, SharedPrefs.IS_ADS_REMOVED, true);
-        removeAds();
         Share.showAlert(activity, getString(R.string.app_name), getString(R.string.remove_ads_msg));
     }
 
-    private void removeAds() {
-        iv_remove_ad.setVisibility(View.GONE);
-        iv_more_apps.setVisibility(View.GONE);
-    }
 
     @Override
     public void onPurchaseHistoryRestored() {
@@ -574,6 +569,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onBackPressed() {
         if (Share.isNeedToAdShow(getApplicationContext())) {
             finish();
+            System.exit(0);
         } else {
             openExitDialog();
         }
@@ -597,6 +593,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 if (SplashHomeActivity.activity != null) {
                     SplashHomeActivity.activity.finish();
+                    System.exit(0);
                 }
 
                 Intent startMain = new Intent(Intent.ACTION_MAIN);
@@ -605,6 +602,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(startMain);
                 System.exit(0);
                 finish();
+                System.exit(0);
             }
         });
 

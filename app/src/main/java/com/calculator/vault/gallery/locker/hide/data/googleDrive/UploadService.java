@@ -21,7 +21,6 @@ import android.webkit.WebView;
 import android.widget.Toast;
 
 import com.calculator.vault.gallery.locker.hide.data.R;
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.googleapis.extensions.android.gms.auth.GoogleAccountCredential;
 import com.google.api.client.json.gson.GsonFactory;
@@ -58,78 +57,7 @@ public class UploadService extends Service {
         super.onCreate();
     }
 
-    @Override
-    public int onStartCommand(Intent intent, int flags, int startId) {
 
-        Log.d(TAG, "onStartCommand: ");
-
-        isUploadRunning = true;
-        // Use the authenticated account to sign in to the Drive service.
-        GoogleAccountCredential credential =
-                GoogleAccountCredential.usingOAuth2(
-                        this, Collections.singleton(DriveScopes.DRIVE_FILE));
-        credential.setSelectedAccount(GoogleSignIn.getLastSignedInAccount(UploadService.this).getAccount());
-        Drive googleDriveService =
-                new Drive.Builder(
-                        AndroidHttp.newCompatibleTransport(),
-                        new GsonFactory(), credential)
-                        .setApplicationName("Drive API Migration")
-                        .build();
-
-        // The DriveServiceHelper encapsulates all REST API and SAF functionality.
-        // Its instantiation is required before handling any onClick actions.
-        mDriveServiceHelper = new DriveServiceHelper(googleDriveService);
-
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-
-            String CHANNEL_ID = "my_channel_02"; // The id of the channel.
-            CharSequence name = getString(R.string.app_name); // The user-visible name of the channel.
-            int importance = NotificationManager.IMPORTANCE_HIGH;
-
-            NotificationChannel mChannel = new NotificationChannel(CHANNEL_ID, name, importance);
-            notification = new Notification.Builder(this)
-                    .setContentTitle(getString(R.string.app_name))
-                    .setContentText("Uploading backup...")
-                    .setSmallIcon(R.mipmap.ic_launcher)
-                    .setChannelId(CHANNEL_ID)
-                    .setOngoing(true)
-                    .setProgress(0, 0, true)
-                    .setAutoCancel(false)
-                    .setContentIntent(PendingIntent.getActivity(this, 0, new Intent(), 0));
-
-            mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-            if (mNotificationManager != null) {
-                mNotificationManager.createNotificationChannel(mChannel);
-                //mNotificationManager.notify(2, notification.build());
-            }
-
-            startForeground(3, notification.build());
-        } else {
-
-            notificationManager = NotificationManagerCompat.from(UploadService.this);
-            builder = new NotificationCompat.Builder(UploadService.this, "notification_id");
-            builder.setContentTitle(getString(R.string.app_name))
-                    .setContentText("Uploading backup...")
-                    .setSmallIcon(R.mipmap.ic_launcher)
-                    .setAutoCancel(false)
-                    .setOngoing(true)
-                    .setContentIntent(PendingIntent.getActivity(this, 0, new Intent(), 0))
-                    .setPriority(NotificationCompat.PRIORITY_LOW);
-
-            // Issue the initial notification with zero progress
-            int PROGRESS_MAX = 0;
-            int PROGRESS_CURRENT = 0;
-            builder.setProgress(PROGRESS_MAX, PROGRESS_CURRENT, true);
-            notificationManager.notify(3, builder.build());
-        }
-        Log.d(TAG, "onStartCommand: Before");
-
-        new ZipingTask().execute();
-        Log.d(TAG, "onStartCommand: After");
-
-        return START_NOT_STICKY;
-    }
 
     /**
      * Opens the Storage Access Framework file picker using @link REQUEST_CODE_OPEN_DOCUMENT

@@ -48,23 +48,6 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/mbroset"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/j_bg_tra"
-            android:drawableEnd="@drawable/ic_right_arrow_navy"
-            android:fontFamily="@font/poppins_regular"
-            android:gravity="center_vertical"
-            android:padding="8dp"
-            android:text="Browser Settings"
-            android:textColor="@color/navy_blue"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <TextView
             android:id="@+id/mlosett"
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -117,25 +100,6 @@
             android:gravity="center_vertical"
             android:padding="8dp"
             android:text="@string/DecoyPasscode"
-            android:textColor="@color/navy_blue"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/mbarest"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_weight="1"
-            android:background="@drawable/j_bg_tra"
-            android:drawableEnd="@drawable/ic_right_arrow_navy"
-            android:fontFamily="@font/poppins_regular"
-            android:gravity="center_vertical"
-            android:padding="8dp"
-            android:text="Backup and Restore"
             android:textColor="@color/navy_blue"
             android:textSize="18sp"
             android:textStyle="bold" />

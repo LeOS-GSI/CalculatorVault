@@ -57,7 +57,7 @@
     <string name="Google" translatable="false">Google</string>
     <string name="Yahoo" translatable="false">Yahoo</string>
     <string name="Bing" translatable="false">Bing</string>
-    <string name="googlelink" translatable="false">https://www.google.com/</string>
+    <string name="googlelink" translatable="false">https://www.qwant.com/</string>
     <string name="yahoolink" translatable="false">https://in.yahoo.com/?p=us</string>
     <string name="binglink" translatable="false">https://www.bing.com/</string>
     <string name="Title" translatable="false">Title:</string>
@@ -219,10 +219,10 @@
     <string name="Other" translatable="false">Other Files</string>
     <string name="other_files" translatable="false">Other Files</string>
 
-    <string name="accessibility_service_desc" translatable="false">"Calculator Vault locks applications that you have chosen to be locked.\n
-Calculator Vault performs:\n
+    <string name="accessibility_service_desc" translatable="false">"LeOS AppVault locks applications that you have chosen to be locked.\n
+LeOS AppVault performs:\n
 Observe your actions:-\n
-Calculator Vault observers \"typeWindowStateChanged\" event to detect current focus when you open any locked app.\n
+LeOS AppVault observers \"typeWindowStateChanged\" event to detect current focus when you open any locked app.\n
 Privacy Note:-\n
 This application don't store or send any kind of your information. This service is only used to retrieve application window when user opens locked app."</string>
     <string name="accessibility_service_summary" translatable="false">Lock app using CalculatorVault</string>

@@ -29,11 +29,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_toEndOf="@+id/babalao"
                     android:layout_toStartOf="@id/iv_empty"
+                    android:layout_toEndOf="@+id/babalao"
                     android:fontFamily="@font/poppins_regular"
                     android:gravity="center"
-                    android:text="Calculator Vault"
+                    android:text="LeOS-AppVault"
                     android:textColor="@color/navy_blue"
                     android:textSize="24sp"
                     android:textStyle="bold" />
@@ -145,13 +145,13 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="12dp"
                                 android:fontFamily="@font/poppins_regular"
-                                android:text="Smart Tools"
+                                android:text=""
                                 android:textColor="@color/navy_blue"
                                 android:textSize="22sp"
                                 android:textStyle="bold" />
 
                             <LinearLayout
-                                android:layout_width="match_parent"
+                                android:layout_width="98dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
                                 android:gravity="bottom"
@@ -168,17 +168,12 @@
                                     android:gravity="center_horizontal"
                                     android:orientation="vertical">
 
-                                    <ImageView
-                                        android:layout_width="56dp"
-                                        android:layout_height="56dp"
-                                        android:src="@drawable/j_home_img_translator" />
-
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginTop="12dp"
                                         android:fontFamily="@font/poppins_regular"
-                                        android:text="Translator"
+                                        android:text=""
                                         android:textColor="@color/navy_blue"
                                         android:textStyle="bold" />
 
@@ -204,7 +199,7 @@
                                         android:layout_marginTop="12dp"
                                         android:fontFamily="@font/poppins_regular"
                                         android:text="Calculator"
-                                        android:textColor="@color/navy_blue"
+                                        android:textColor="@color/white"
                                         android:textStyle="bold" />
 
                                 </LinearLayout>
@@ -218,22 +213,16 @@
                                     android:gravity="center_horizontal"
                                     android:orientation="vertical">
 
-                                    <ImageView
-                                        android:layout_width="56dp"
-                                        android:layout_height="56dp"
-                                        android:src="@drawable/j_home_img_recorder" />
-
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginTop="12dp"
                                         android:fontFamily="@font/poppins_regular"
-                                        android:text="Recorder"
+                                        android:text=""
                                         android:textColor="@color/navy_blue"
                                         android:textStyle="bold" />
 
                                 </LinearLayout>
-
 
                                 <LinearLayout
                                     android:id="@+id/view_more_actions"
@@ -243,22 +232,11 @@
                                     android:gravity="center_horizontal"
                                     android:orientation="vertical">
 
-                                    <ImageView
-                                        android:layout_width="56dp"
-                                        android:layout_height="56dp"
-                                        android:src="@drawable/j_home_img_more" />
+                                    dp"
 
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="12dp"
-                                        android:fontFamily="@font/poppins_regular"
-                                        android:text="View More"
-                                        android:textColor="@color/navy_blue"
-                                        android:textStyle="bold" />
+                                    />
 
                                 </LinearLayout>
-
 
                             </LinearLayout>
                         </LinearLayout>
@@ -342,7 +320,7 @@
 
 
                                 <LinearLayout
-                                    android:id="@+id/ll_browser"
+                                    android:id="@+id/imageView14"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
@@ -358,7 +336,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:fontFamily="@font/poppins_regular"
-                                        android:text="Browser"
+                                        android:text=""
                                         android:textColor="@color/white"
                                         android:textStyle="bold" />
 
@@ -373,18 +351,7 @@
                                     android:gravity="center_horizontal"
                                     android:orientation="vertical">
 
-                                    <ImageView
-                                        android:layout_width="64dp"
-                                        android:layout_height="64dp"
-                                        android:src="@drawable/j_img_home_credentials" />
 
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:fontFamily="@font/poppins_regular"
-                                        android:text="Credentials"
-                                        android:textColor="@color/white"
-                                        android:textStyle="bold" />
 
                                 </LinearLayout>
 

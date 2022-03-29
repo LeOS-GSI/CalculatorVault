@@ -49,24 +49,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1.0"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left|right|center_horizontal|fill_horizontal|center|fill|start|end"
-                        android:layout_marginBottom="@dimen/_5ssp"
-                        android:gravity="center"
-                        android:text="Rate App..."
-                        android:textColor="#A9A9A9" />
-
-                    <com.hsalf.smilerating.SmileRating
-                        android:id="@+id/smile_rating"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        cardview:angryColor="#ec5062"
-                        cardview:normalColor="#fbdc31" />
-                </LinearLayout>
+                    android:orientation="vertical"/>
             </LinearLayout>
 
             <LinearLayout

@@ -21,7 +21,6 @@ import com.calculator.vault.gallery.locker.hide.data.common.Utils;
 import com.calculator.vault.gallery.locker.hide.data.googleDrive.DownloadService;
 import com.calculator.vault.gallery.locker.hide.data.googleDrive.UploadService;
 import com.crashlytics.android.Crashlytics;
-import com.facebook.ads.AudienceNetworkAds;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
@@ -97,7 +96,6 @@ public class MainApplication extends MultiDexApplication {
 
         Appnext.init(this);
 
-        AudienceNetworkAds.isInAdsProcess(this);
 
         //Initialize Inmobi SDK before any API call.
         InMobiSdk.setLogLevel(InMobiSdk.LogLevel.DEBUG);

@@ -11,7 +11,6 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
@@ -110,24 +109,6 @@ public class ShowBrowserActivity extends AppCompatActivity implements View.OnCli
             }
         });
 
-        // To get web loaded progress and to display progressBar...
-        myWebView.setWebChromeClient(new WebChromeClient() {
-
-            @Override
-            public void onProgressChanged(WebView view, int progress) {
-                super.onProgressChanged(view, progress);
-
-                pb_browserLoad.setProgress(progress);
-                if (progress == 100) {
-                    pb_browserLoad.setVisibility(View.GONE);
-
-                } else {
-                    pb_browserLoad.setVisibility(View.VISIBLE);
-
-                }
-
-            }
-        });
 
         myWebView.getSettings().setJavaScriptEnabled(true);
 
